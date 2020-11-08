@@ -38,6 +38,12 @@
             this.uxFirstName = new System.Windows.Forms.TextBox();
             this.uxLastName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uxZipCodeLabel = new System.Windows.Forms.Label();
+            this.uxZipCode = new System.Windows.Forms.TextBox();
+            this.uxTrasactions = new System.Windows.Forms.TextBox();
+            this.uxTransactionsLabel = new System.Windows.Forms.Label();
+            this.uxAdd = new System.Windows.Forms.Button();
+            this.uxLookup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxFirstNameLabel
@@ -81,7 +87,7 @@
             // 
             this.uxDoBPick.Location = new System.Drawing.Point(100, 151);
             this.uxDoBPick.Name = "uxDoBPick";
-            this.uxDoBPick.Size = new System.Drawing.Size(200, 20);
+            this.uxDoBPick.Size = new System.Drawing.Size(228, 20);
             this.uxDoBPick.TabIndex = 8;
             this.uxDoBPick.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -89,27 +95,27 @@
             // 
             this.uxEmailAddress.Location = new System.Drawing.Point(100, 122);
             this.uxEmailAddress.Name = "uxEmailAddress";
-            this.uxEmailAddress.Size = new System.Drawing.Size(200, 20);
+            this.uxEmailAddress.Size = new System.Drawing.Size(228, 20);
             this.uxEmailAddress.TabIndex = 9;
             // 
             // uxMemberID
             // 
             this.uxMemberID.Location = new System.Drawing.Point(100, 96);
             this.uxMemberID.Name = "uxMemberID";
-            this.uxMemberID.Size = new System.Drawing.Size(200, 20);
+            this.uxMemberID.Size = new System.Drawing.Size(228, 20);
             this.uxMemberID.TabIndex = 10;
             // 
             // uxFirstName
             // 
             this.uxFirstName.Location = new System.Drawing.Point(100, 70);
             this.uxFirstName.Name = "uxFirstName";
-            this.uxFirstName.Size = new System.Drawing.Size(60, 20);
+            this.uxFirstName.Size = new System.Drawing.Size(72, 20);
             this.uxFirstName.TabIndex = 11;
             // 
             // uxLastName
             // 
             this.uxLastName.AutoSize = true;
-            this.uxLastName.Location = new System.Drawing.Point(166, 73);
+            this.uxLastName.Location = new System.Drawing.Point(178, 73);
             this.uxLastName.Name = "uxLastName";
             this.uxLastName.Size = new System.Drawing.Size(61, 13);
             this.uxLastName.TabIndex = 12;
@@ -117,16 +123,74 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(233, 70);
+            this.textBox1.Location = new System.Drawing.Point(245, 70);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(67, 20);
+            this.textBox1.Size = new System.Drawing.Size(83, 20);
             this.textBox1.TabIndex = 13;
+            // 
+            // uxZipCodeLabel
+            // 
+            this.uxZipCodeLabel.AutoSize = true;
+            this.uxZipCodeLabel.Location = new System.Drawing.Point(12, 181);
+            this.uxZipCodeLabel.Name = "uxZipCodeLabel";
+            this.uxZipCodeLabel.Size = new System.Drawing.Size(53, 13);
+            this.uxZipCodeLabel.TabIndex = 14;
+            this.uxZipCodeLabel.Text = "Zip Code:";
+            // 
+            // uxZipCode
+            // 
+            this.uxZipCode.Location = new System.Drawing.Point(100, 179);
+            this.uxZipCode.Name = "uxZipCode";
+            this.uxZipCode.Size = new System.Drawing.Size(228, 20);
+            this.uxZipCode.TabIndex = 15;
+            // 
+            // uxTrasactions
+            // 
+            this.uxTrasactions.Location = new System.Drawing.Point(459, 96);
+            this.uxTrasactions.Multiline = true;
+            this.uxTrasactions.Name = "uxTrasactions";
+            this.uxTrasactions.Size = new System.Drawing.Size(277, 155);
+            this.uxTrasactions.TabIndex = 16;
+            this.uxTrasactions.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // uxTransactionsLabel
+            // 
+            this.uxTransactionsLabel.AutoSize = true;
+            this.uxTransactionsLabel.Location = new System.Drawing.Point(456, 73);
+            this.uxTransactionsLabel.Name = "uxTransactionsLabel";
+            this.uxTransactionsLabel.Size = new System.Drawing.Size(71, 13);
+            this.uxTransactionsLabel.TabIndex = 17;
+            this.uxTransactionsLabel.Text = "Transactions:";
+            // 
+            // uxAdd
+            // 
+            this.uxAdd.Location = new System.Drawing.Point(100, 205);
+            this.uxAdd.Name = "uxAdd";
+            this.uxAdd.Size = new System.Drawing.Size(110, 46);
+            this.uxAdd.TabIndex = 18;
+            this.uxAdd.Text = "Add";
+            this.uxAdd.UseVisualStyleBackColor = true;
+            // 
+            // uxLookup
+            // 
+            this.uxLookup.Location = new System.Drawing.Point(216, 205);
+            this.uxLookup.Name = "uxLookup";
+            this.uxLookup.Size = new System.Drawing.Size(112, 46);
+            this.uxLookup.TabIndex = 19;
+            this.uxLookup.Text = "Lookup";
+            this.uxLookup.UseVisualStyleBackColor = true;
             // 
             // MuseumApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 312);
+            this.Controls.Add(this.uxLookup);
+            this.Controls.Add(this.uxAdd);
+            this.Controls.Add(this.uxTransactionsLabel);
+            this.Controls.Add(this.uxTrasactions);
+            this.Controls.Add(this.uxZipCode);
+            this.Controls.Add(this.uxZipCodeLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.uxLastName);
             this.Controls.Add(this.uxFirstName);
@@ -156,6 +220,12 @@
         private System.Windows.Forms.TextBox uxFirstName;
         private System.Windows.Forms.Label uxLastName;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label uxZipCodeLabel;
+        private System.Windows.Forms.TextBox uxZipCode;
+        private System.Windows.Forms.TextBox uxTrasactions;
+        private System.Windows.Forms.Label uxTransactionsLabel;
+        private System.Windows.Forms.Button uxAdd;
+        private System.Windows.Forms.Button uxLookup;
     }
 }
 

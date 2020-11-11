@@ -8,3 +8,13 @@ C:\Users\chanc\source\repos\Museum Project\Museum Project\obj\Debug\Museum Proje
 C:\Users\chanc\source\repos\Museum Project\Museum Project\obj\Debug\Museum Project.csproj.CoreCompileInputs.cache
 C:\Users\chanc\source\repos\Museum Project\Museum Project\obj\Debug\Museum Project.exe
 C:\Users\chanc\source\repos\Museum Project\Museum Project\obj\Debug\Museum Project.pdb
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\bin\Debug\Museum Project.exe.config
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\bin\Debug\Museum Project.exe
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\bin\Debug\Museum Project.pdb
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Project.csprojAssemblyReference.cache
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum_Project.MuseumApp.resources
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum_Project.Properties.Resources.resources
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Project.csproj.GenerateResource.cache
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Project.csproj.CoreCompileInputs.cache
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Project.exe
+C:\Users\chanc\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Project.pdb

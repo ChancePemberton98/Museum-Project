@@ -36,8 +36,8 @@
             this.uxEmailAddress = new System.Windows.Forms.TextBox();
             this.uxMemberID = new System.Windows.Forms.TextBox();
             this.uxFirstName = new System.Windows.Forms.TextBox();
-            this.uxLastName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uxLastNameLabel = new System.Windows.Forms.Label();
+            this.uxLastName = new System.Windows.Forms.TextBox();
             this.uxZipCodeLabel = new System.Windows.Forms.Label();
             this.uxZipCode = new System.Windows.Forms.TextBox();
             this.uxTrasactions = new System.Windows.Forms.TextBox();
@@ -111,22 +111,25 @@
             this.uxFirstName.Name = "uxFirstName";
             this.uxFirstName.Size = new System.Drawing.Size(72, 20);
             this.uxFirstName.TabIndex = 11;
+            this.uxFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.uxFirstName_Validating);
+            // 
+            // uxLastNameLabel
+            // 
+            this.uxLastNameLabel.AutoSize = true;
+            this.uxLastNameLabel.Location = new System.Drawing.Point(178, 73);
+            this.uxLastNameLabel.Name = "uxLastNameLabel";
+            this.uxLastNameLabel.Size = new System.Drawing.Size(61, 13);
+            this.uxLastNameLabel.TabIndex = 12;
+            this.uxLastNameLabel.Text = "Last Name:";
             // 
             // uxLastName
             // 
-            this.uxLastName.AutoSize = true;
-            this.uxLastName.Location = new System.Drawing.Point(178, 73);
+            this.uxLastName.Location = new System.Drawing.Point(245, 70);
             this.uxLastName.Name = "uxLastName";
-            this.uxLastName.Size = new System.Drawing.Size(61, 13);
-            this.uxLastName.TabIndex = 12;
-            this.uxLastName.Text = "Last Name:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(245, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 20);
-            this.textBox1.TabIndex = 13;
+            this.uxLastName.Size = new System.Drawing.Size(83, 20);
+            this.uxLastName.TabIndex = 13;
+            this.uxLastName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.uxLastName.Validating += new System.ComponentModel.CancelEventHandler(this.uxLastName_Validating);
             // 
             // uxZipCodeLabel
             // 
@@ -170,6 +173,7 @@
             this.uxAdd.TabIndex = 18;
             this.uxAdd.Text = "Add";
             this.uxAdd.UseVisualStyleBackColor = true;
+            this.uxAdd.Click += new System.EventHandler(this.uxAdd_Click);
             // 
             // uxLookup
             // 
@@ -191,8 +195,8 @@
             this.Controls.Add(this.uxTrasactions);
             this.Controls.Add(this.uxZipCode);
             this.Controls.Add(this.uxZipCodeLabel);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.uxLastName);
+            this.Controls.Add(this.uxLastNameLabel);
             this.Controls.Add(this.uxFirstName);
             this.Controls.Add(this.uxMemberID);
             this.Controls.Add(this.uxEmailAddress);
@@ -218,8 +222,8 @@
         private System.Windows.Forms.TextBox uxEmailAddress;
         private System.Windows.Forms.TextBox uxMemberID;
         private System.Windows.Forms.TextBox uxFirstName;
-        private System.Windows.Forms.Label uxLastName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label uxLastNameLabel;
+        private System.Windows.Forms.TextBox uxLastName;
         private System.Windows.Forms.Label uxZipCodeLabel;
         private System.Windows.Forms.TextBox uxZipCode;
         private System.Windows.Forms.TextBox uxTrasactions;

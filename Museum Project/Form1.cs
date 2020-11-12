@@ -25,6 +25,8 @@ namespace Museum_Project
             InitializeComponent();
             connectBtn.Click += onConnectClick;
             uxLookup.Click += onLookupClick;
+            uxAddActivityBtn.Click += onActivityAddClick;
+            uxLookUpActivityBtn.Click += onLookupActivityClick;
         }
         ErrorProvider errorProvider = new ErrorProvider();
 
@@ -92,9 +94,40 @@ namespace Museum_Project
         {
             string connectionString;
             connectionString = $@"Data Source=mssql.cs.ksu.edu;Initial Catalog={usernameTxt.Text};User ID={usernameTxt.Text};Password={passwordTxt.Text}";
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            uxResults.Text = "Connection Open!";
+            try
+            {
+                cnn = new SqlConnection(connectionString);
+                cnn.Open();
+                uxResults.Text = "Connection Open!";
+            }
+            catch (Exception)
+            {
+                uxResults.Text = "Login failed...";
+            }
+        }
+
+        private void onActivityAddClick(object sender, EventArgs e)
+        {
+            sql = $"INSERT INTO Project.Activity([ActivityName],ActivityDate,Fee)" +
+                  $"VALUES(N'{uxActivityName.Text}',N'{uxActivityDate.Value.Year}-{uxActivityDate.Value.Month}-{uxActivityDate.Value.Day}',{uxActivityFee.Value})";
+            command = new SqlCommand(sql, cnn);
+            dataAdapter.InsertCommand = command;
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+        }
+
+        private void onLookupActivityClick(object sender, EventArgs e)
+        {
+            sql = $"SELECT * FROM Project.Activity A WHERE A.ActivityName = N'{uxActivityName.Text}'";
+            command = new SqlCommand(sql, cnn);
+            dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                output = output + $"{dataReader.GetValue(0)} - {dataReader.GetValue(1)} - {dataReader.GetValue(2)} \n";
+            }
+            dataReader.Close();
+            uxResults.Text = output;
         }
 
         private void uxEmailLabel_Click(object sender, EventArgs e)

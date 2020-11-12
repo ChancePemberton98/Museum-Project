@@ -51,13 +51,13 @@
             this.uxActivityLabel = new System.Windows.Forms.Label();
             this.uxActivityName = new System.Windows.Forms.TextBox();
             this.uxActivityDate = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.uxActivityFee = new System.Windows.Forms.NumericUpDown();
             this.uxActivityNameLabel = new System.Windows.Forms.Label();
             this.uxActivityDateLabel = new System.Windows.Forms.Label();
             this.uxFeeLabel = new System.Windows.Forms.Label();
             this.uxLookUpActivityBtn = new System.Windows.Forms.Button();
             this.uxAddActivityBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uxActivityFee)).BeginInit();
             this.SuspendLayout();
             // 
             // uxFirstNameLabel
@@ -177,11 +177,11 @@
             // uxResults
             // 
             this.uxResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxResults.Location = new System.Drawing.Point(568, 32);
+            this.uxResults.Location = new System.Drawing.Point(686, 32);
             this.uxResults.Multiline = true;
             this.uxResults.Name = "uxResults";
             this.uxResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.uxResults.Size = new System.Drawing.Size(266, 398);
+            this.uxResults.Size = new System.Drawing.Size(342, 398);
             this.uxResults.TabIndex = 16;
             this.uxResults.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -189,7 +189,7 @@
             // 
             this.uxTransactionsLabel.AutoSize = true;
             this.uxTransactionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTransactionsLabel.Location = new System.Drawing.Point(564, 9);
+            this.uxTransactionsLabel.Location = new System.Drawing.Point(682, 9);
             this.uxTransactionsLabel.Name = "uxTransactionsLabel";
             this.uxTransactionsLabel.Size = new System.Drawing.Size(67, 20);
             this.uxTransactionsLabel.TabIndex = 17;
@@ -218,7 +218,7 @@
             // 
             // passwordTxt
             // 
-            this.passwordTxt.Location = new System.Drawing.Point(734, 462);
+            this.passwordTxt.Location = new System.Drawing.Point(928, 462);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(100, 20);
             this.passwordTxt.TabIndex = 23;
@@ -227,7 +227,7 @@
             // 
             // usernameTxt
             // 
-            this.usernameTxt.Location = new System.Drawing.Point(734, 436);
+            this.usernameTxt.Location = new System.Drawing.Point(928, 436);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(100, 20);
             this.usernameTxt.TabIndex = 22;
@@ -235,7 +235,7 @@
             // 
             // connectBtn
             // 
-            this.connectBtn.Location = new System.Drawing.Point(734, 488);
+            this.connectBtn.Location = new System.Drawing.Point(928, 488);
             this.connectBtn.Name = "connectBtn";
             this.connectBtn.Size = new System.Drawing.Size(100, 23);
             this.connectBtn.TabIndex = 21;
@@ -267,7 +267,7 @@
             this.uxActivityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxActivityName.Location = new System.Drawing.Point(117, 277);
             this.uxActivityName.Name = "uxActivityName";
-            this.uxActivityName.Size = new System.Drawing.Size(100, 26);
+            this.uxActivityName.Size = new System.Drawing.Size(278, 26);
             this.uxActivityName.TabIndex = 26;
             // 
             // uxActivityDate
@@ -278,14 +278,14 @@
             this.uxActivityDate.Size = new System.Drawing.Size(278, 26);
             this.uxActivityDate.TabIndex = 27;
             // 
-            // numericUpDown1
+            // uxActivityFee
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(117, 341);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown1.TabIndex = 28;
+            this.uxActivityFee.DecimalPlaces = 2;
+            this.uxActivityFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxActivityFee.Location = new System.Drawing.Point(117, 341);
+            this.uxActivityFee.Name = "uxActivityFee";
+            this.uxActivityFee.Size = new System.Drawing.Size(120, 26);
+            this.uxActivityFee.TabIndex = 28;
             // 
             // uxActivityNameLabel
             // 
@@ -341,13 +341,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 554);
+            this.ClientSize = new System.Drawing.Size(1040, 520);
             this.Controls.Add(this.uxLookUpActivityBtn);
             this.Controls.Add(this.uxAddActivityBtn);
             this.Controls.Add(this.uxFeeLabel);
             this.Controls.Add(this.uxActivityDateLabel);
             this.Controls.Add(this.uxActivityNameLabel);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.uxActivityFee);
             this.Controls.Add(this.uxActivityDate);
             this.Controls.Add(this.uxActivityName);
             this.Controls.Add(this.uxActivityLabel);
@@ -373,7 +373,7 @@
             this.Controls.Add(this.uxFirstNameLabel);
             this.Name = "MuseumApp";
             this.Text = "Museum Project";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uxActivityFee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,7 +404,7 @@
         private System.Windows.Forms.Label uxActivityLabel;
         private System.Windows.Forms.TextBox uxActivityName;
         private System.Windows.Forms.DateTimePicker uxActivityDate;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown uxActivityFee;
         private System.Windows.Forms.Label uxActivityNameLabel;
         private System.Windows.Forms.Label uxActivityDateLabel;
         private System.Windows.Forms.Label uxFeeLabel;

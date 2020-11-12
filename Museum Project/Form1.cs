@@ -24,6 +24,7 @@ namespace Museum_Project
         {
             InitializeComponent();
             connectBtn.Click += onConnectClick;
+            uxLookup.Click += onLookupClick;
         }
         ErrorProvider errorProvider = new ErrorProvider();
 
@@ -80,16 +81,18 @@ namespace Museum_Project
                 errorProvider.SetError(uxLastName, null);
             }
         }
-
-
-
-
-
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        
+        private void onLookupClick(object sender, EventArgs e)
         {
+            sql = $"SELECT * FROM Project.Member M WHERE M.Name = N'{uxFirstName.Text} {uxLastName.Text}'";
+            command = new SqlCommand(sql, cnn);
+            dataReader = command.ExecuteReader();
 
+            while (dataReader.Read())
+            {
+                output = output + $"{dataReader.GetValue(0)} - {dataReader.GetValue(1)} - {dataReader.GetValue(2)} \n";
+            }
+            uxTrasactions.Text = output;
         }
 
         private void onConnectClick(object sender, EventArgs e)
@@ -106,6 +109,12 @@ namespace Museum_Project
             var qWindow = new QueryForm();
             qWindow.Show();
             
+        }
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

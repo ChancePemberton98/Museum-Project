@@ -40,22 +40,28 @@
             this.uxLastName = new System.Windows.Forms.TextBox();
             this.uxZipCodeLabel = new System.Windows.Forms.Label();
             this.uxZipCode = new System.Windows.Forms.TextBox();
-            this.uxTrasactions = new System.Windows.Forms.TextBox();
+            this.uxResults = new System.Windows.Forms.TextBox();
             this.uxTransactionsLabel = new System.Windows.Forms.Label();
             this.uxAdd = new System.Windows.Forms.Button();
             this.uxLookup = new System.Windows.Forms.Button();
-            this.queryBtn = new System.Windows.Forms.Button();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.usernameTxt = new System.Windows.Forms.TextBox();
             this.connectBtn = new System.Windows.Forms.Button();
+            this.labelMember = new System.Windows.Forms.Label();
+            this.uxActivityLabel = new System.Windows.Forms.Label();
+            this.uxActivityName = new System.Windows.Forms.TextBox();
+            this.uxActivityDate = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // uxFirstNameLabel
             // 
             this.uxFirstNameLabel.AutoSize = true;
-            this.uxFirstNameLabel.Location = new System.Drawing.Point(12, 73);
+            this.uxFirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxFirstNameLabel.Location = new System.Drawing.Point(11, 36);
             this.uxFirstNameLabel.Name = "uxFirstNameLabel";
-            this.uxFirstNameLabel.Size = new System.Drawing.Size(60, 13);
+            this.uxFirstNameLabel.Size = new System.Drawing.Size(90, 20);
             this.uxFirstNameLabel.TabIndex = 0;
             this.uxFirstNameLabel.Text = "First Name:";
             this.uxFirstNameLabel.Click += new System.EventHandler(this.uxNameLabel_Click);
@@ -63,74 +69,84 @@
             // uxMemberIDLabel
             // 
             this.uxMemberIDLabel.AutoSize = true;
-            this.uxMemberIDLabel.Location = new System.Drawing.Point(12, 104);
+            this.uxMemberIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxMemberIDLabel.Location = new System.Drawing.Point(12, 68);
             this.uxMemberIDLabel.Name = "uxMemberIDLabel";
-            this.uxMemberIDLabel.Size = new System.Drawing.Size(59, 13);
+            this.uxMemberIDLabel.Size = new System.Drawing.Size(88, 20);
             this.uxMemberIDLabel.TabIndex = 1;
             this.uxMemberIDLabel.Text = "MemberID:";
             // 
             // uxEmailLabel
             // 
             this.uxEmailLabel.AutoSize = true;
-            this.uxEmailLabel.Location = new System.Drawing.Point(12, 129);
+            this.uxEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxEmailLabel.Location = new System.Drawing.Point(12, 103);
             this.uxEmailLabel.Name = "uxEmailLabel";
-            this.uxEmailLabel.Size = new System.Drawing.Size(76, 13);
+            this.uxEmailLabel.Size = new System.Drawing.Size(52, 20);
             this.uxEmailLabel.TabIndex = 2;
-            this.uxEmailLabel.Text = "Email Address:";
+            this.uxEmailLabel.Text = "Email:";
+            this.uxEmailLabel.Click += new System.EventHandler(this.uxEmailLabel_Click);
             // 
             // uxDoBLabel
             // 
             this.uxDoBLabel.AutoSize = true;
-            this.uxDoBLabel.Location = new System.Drawing.Point(12, 154);
+            this.uxDoBLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxDoBLabel.Location = new System.Drawing.Point(12, 132);
             this.uxDoBLabel.Name = "uxDoBLabel";
-            this.uxDoBLabel.Size = new System.Drawing.Size(69, 13);
+            this.uxDoBLabel.Size = new System.Drawing.Size(103, 20);
             this.uxDoBLabel.TabIndex = 3;
             this.uxDoBLabel.Text = "Date of Birth:";
             // 
             // uxDoBPick
             // 
-            this.uxDoBPick.Location = new System.Drawing.Point(100, 151);
+            this.uxDoBPick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxDoBPick.Location = new System.Drawing.Point(117, 132);
             this.uxDoBPick.Name = "uxDoBPick";
-            this.uxDoBPick.Size = new System.Drawing.Size(228, 20);
+            this.uxDoBPick.Size = new System.Drawing.Size(278, 26);
             this.uxDoBPick.TabIndex = 8;
             this.uxDoBPick.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // uxEmailAddress
             // 
-            this.uxEmailAddress.Location = new System.Drawing.Point(100, 122);
+            this.uxEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxEmailAddress.Location = new System.Drawing.Point(117, 100);
             this.uxEmailAddress.Name = "uxEmailAddress";
-            this.uxEmailAddress.Size = new System.Drawing.Size(228, 20);
+            this.uxEmailAddress.Size = new System.Drawing.Size(278, 26);
             this.uxEmailAddress.TabIndex = 9;
             // 
             // uxMemberID
             // 
-            this.uxMemberID.Location = new System.Drawing.Point(100, 96);
+            this.uxMemberID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxMemberID.Location = new System.Drawing.Point(117, 68);
             this.uxMemberID.Name = "uxMemberID";
-            this.uxMemberID.Size = new System.Drawing.Size(228, 20);
+            this.uxMemberID.Size = new System.Drawing.Size(278, 26);
             this.uxMemberID.TabIndex = 10;
             // 
             // uxFirstName
             // 
-            this.uxFirstName.Location = new System.Drawing.Point(100, 70);
+            this.uxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxFirstName.Location = new System.Drawing.Point(117, 36);
             this.uxFirstName.Name = "uxFirstName";
-            this.uxFirstName.Size = new System.Drawing.Size(72, 20);
+            this.uxFirstName.Size = new System.Drawing.Size(93, 26);
             this.uxFirstName.TabIndex = 11;
             this.uxFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.uxFirstName_Validating);
             // 
             // uxLastNameLabel
             // 
             this.uxLastNameLabel.AutoSize = true;
-            this.uxLastNameLabel.Location = new System.Drawing.Point(178, 73);
+            this.uxLastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxLastNameLabel.Location = new System.Drawing.Point(216, 39);
             this.uxLastNameLabel.Name = "uxLastNameLabel";
-            this.uxLastNameLabel.Size = new System.Drawing.Size(61, 13);
+            this.uxLastNameLabel.Size = new System.Drawing.Size(90, 20);
             this.uxLastNameLabel.TabIndex = 12;
             this.uxLastNameLabel.Text = "Last Name:";
             // 
             // uxLastName
             // 
-            this.uxLastName.Location = new System.Drawing.Point(245, 70);
+            this.uxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxLastName.Location = new System.Drawing.Point(303, 36);
             this.uxLastName.Name = "uxLastName";
-            this.uxLastName.Size = new System.Drawing.Size(83, 20);
+            this.uxLastName.Size = new System.Drawing.Size(92, 26);
             this.uxLastName.TabIndex = 13;
             this.uxLastName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.uxLastName.Validating += new System.ComponentModel.CancelEventHandler(this.uxLastName_Validating);
@@ -138,42 +154,46 @@
             // uxZipCodeLabel
             // 
             this.uxZipCodeLabel.AutoSize = true;
-            this.uxZipCodeLabel.Location = new System.Drawing.Point(12, 181);
+            this.uxZipCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxZipCodeLabel.Location = new System.Drawing.Point(12, 164);
             this.uxZipCodeLabel.Name = "uxZipCodeLabel";
-            this.uxZipCodeLabel.Size = new System.Drawing.Size(53, 13);
+            this.uxZipCodeLabel.Size = new System.Drawing.Size(77, 20);
             this.uxZipCodeLabel.TabIndex = 14;
             this.uxZipCodeLabel.Text = "Zip Code:";
             // 
             // uxZipCode
             // 
-            this.uxZipCode.Location = new System.Drawing.Point(100, 179);
+            this.uxZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxZipCode.Location = new System.Drawing.Point(117, 164);
             this.uxZipCode.Name = "uxZipCode";
-            this.uxZipCode.Size = new System.Drawing.Size(228, 20);
+            this.uxZipCode.Size = new System.Drawing.Size(278, 26);
             this.uxZipCode.TabIndex = 15;
             // 
-            // uxTrasactions
+            // uxResults
             // 
-            this.uxTrasactions.Location = new System.Drawing.Point(459, 96);
-            this.uxTrasactions.Multiline = true;
-            this.uxTrasactions.Name = "uxTrasactions";
-            this.uxTrasactions.Size = new System.Drawing.Size(277, 155);
-            this.uxTrasactions.TabIndex = 16;
-            this.uxTrasactions.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.uxResults.Location = new System.Drawing.Point(583, 32);
+            this.uxResults.Multiline = true;
+            this.uxResults.Name = "uxResults";
+            this.uxResults.Size = new System.Drawing.Size(251, 398);
+            this.uxResults.TabIndex = 16;
+            this.uxResults.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // uxTransactionsLabel
             // 
             this.uxTransactionsLabel.AutoSize = true;
-            this.uxTransactionsLabel.Location = new System.Drawing.Point(456, 73);
+            this.uxTransactionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxTransactionsLabel.Location = new System.Drawing.Point(580, 9);
             this.uxTransactionsLabel.Name = "uxTransactionsLabel";
-            this.uxTransactionsLabel.Size = new System.Drawing.Size(71, 13);
+            this.uxTransactionsLabel.Size = new System.Drawing.Size(67, 20);
             this.uxTransactionsLabel.TabIndex = 17;
-            this.uxTransactionsLabel.Text = "Transactions:";
+            this.uxTransactionsLabel.Text = "Results:";
             // 
             // uxAdd
             // 
-            this.uxAdd.Location = new System.Drawing.Point(100, 205);
+            this.uxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxAdd.Location = new System.Drawing.Point(117, 196);
             this.uxAdd.Name = "uxAdd";
-            this.uxAdd.Size = new System.Drawing.Size(110, 46);
+            this.uxAdd.Size = new System.Drawing.Size(141, 46);
             this.uxAdd.TabIndex = 18;
             this.uxAdd.Text = "Add";
             this.uxAdd.UseVisualStyleBackColor = true;
@@ -181,26 +201,17 @@
             // 
             // uxLookup
             // 
-            this.uxLookup.Location = new System.Drawing.Point(216, 205);
+            this.uxLookup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxLookup.Location = new System.Drawing.Point(264, 196);
             this.uxLookup.Name = "uxLookup";
-            this.uxLookup.Size = new System.Drawing.Size(112, 46);
+            this.uxLookup.Size = new System.Drawing.Size(131, 46);
             this.uxLookup.TabIndex = 19;
             this.uxLookup.Text = "Lookup";
             this.uxLookup.UseVisualStyleBackColor = true;
             // 
-            // queryBtn
-            // 
-            this.queryBtn.Location = new System.Drawing.Point(335, 289);
-            this.queryBtn.Name = "queryBtn";
-            this.queryBtn.Size = new System.Drawing.Size(75, 23);
-            this.queryBtn.TabIndex = 20;
-            this.queryBtn.Text = "Query";
-            this.queryBtn.UseVisualStyleBackColor = true;
-            this.queryBtn.Click += new System.EventHandler(this.queryBtn_Click);
-            // 
             // passwordTxt
             // 
-            this.passwordTxt.Location = new System.Drawing.Point(110, 289);
+            this.passwordTxt.Location = new System.Drawing.Point(734, 462);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(100, 20);
             this.passwordTxt.TabIndex = 23;
@@ -209,7 +220,7 @@
             // 
             // usernameTxt
             // 
-            this.usernameTxt.Location = new System.Drawing.Point(4, 289);
+            this.usernameTxt.Location = new System.Drawing.Point(734, 436);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(100, 20);
             this.usernameTxt.TabIndex = 22;
@@ -217,26 +228,75 @@
             // 
             // connectBtn
             // 
-            this.connectBtn.Location = new System.Drawing.Point(216, 287);
+            this.connectBtn.Location = new System.Drawing.Point(734, 488);
             this.connectBtn.Name = "connectBtn";
-            this.connectBtn.Size = new System.Drawing.Size(75, 23);
+            this.connectBtn.Size = new System.Drawing.Size(100, 23);
             this.connectBtn.TabIndex = 21;
             this.connectBtn.Text = "Connect";
             this.connectBtn.UseVisualStyleBackColor = true;
+            // 
+            // labelMember
+            // 
+            this.labelMember.AutoSize = true;
+            this.labelMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMember.Location = new System.Drawing.Point(12, 9);
+            this.labelMember.Name = "labelMember";
+            this.labelMember.Size = new System.Drawing.Size(67, 20);
+            this.labelMember.TabIndex = 24;
+            this.labelMember.Text = "Member";
+            // 
+            // uxActivityLabel
+            // 
+            this.uxActivityLabel.AutoSize = true;
+            this.uxActivityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxActivityLabel.Location = new System.Drawing.Point(13, 285);
+            this.uxActivityLabel.Name = "uxActivityLabel";
+            this.uxActivityLabel.Size = new System.Drawing.Size(58, 20);
+            this.uxActivityLabel.TabIndex = 25;
+            this.uxActivityLabel.Text = "Activity";
+            // 
+            // uxActivityName
+            // 
+            this.uxActivityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxActivityName.Location = new System.Drawing.Point(117, 312);
+            this.uxActivityName.Name = "uxActivityName";
+            this.uxActivityName.Size = new System.Drawing.Size(100, 26);
+            this.uxActivityName.TabIndex = 26;
+            // 
+            // uxActivityDate
+            // 
+            this.uxActivityDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxActivityDate.Location = new System.Drawing.Point(117, 344);
+            this.uxActivityDate.Name = "uxActivityDate";
+            this.uxActivityDate.Size = new System.Drawing.Size(278, 26);
+            this.uxActivityDate.TabIndex = 27;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(117, 376);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown1.TabIndex = 28;
             // 
             // MuseumApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 312);
+            this.ClientSize = new System.Drawing.Size(846, 554);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.uxActivityDate);
+            this.Controls.Add(this.uxActivityName);
+            this.Controls.Add(this.uxActivityLabel);
+            this.Controls.Add(this.labelMember);
             this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.connectBtn);
-            this.Controls.Add(this.queryBtn);
             this.Controls.Add(this.uxLookup);
             this.Controls.Add(this.uxAdd);
             this.Controls.Add(this.uxTransactionsLabel);
-            this.Controls.Add(this.uxTrasactions);
+            this.Controls.Add(this.uxResults);
             this.Controls.Add(this.uxZipCode);
             this.Controls.Add(this.uxZipCodeLabel);
             this.Controls.Add(this.uxLastName);
@@ -251,6 +311,7 @@
             this.Controls.Add(this.uxFirstNameLabel);
             this.Name = "MuseumApp";
             this.Text = "Museum Project";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,14 +331,18 @@
         private System.Windows.Forms.TextBox uxLastName;
         private System.Windows.Forms.Label uxZipCodeLabel;
         private System.Windows.Forms.TextBox uxZipCode;
-        private System.Windows.Forms.TextBox uxTrasactions;
+        private System.Windows.Forms.TextBox uxResults;
         private System.Windows.Forms.Label uxTransactionsLabel;
         private System.Windows.Forms.Button uxAdd;
         private System.Windows.Forms.Button uxLookup;
-        private System.Windows.Forms.Button queryBtn;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.TextBox usernameTxt;
         private System.Windows.Forms.Button connectBtn;
+        private System.Windows.Forms.Label labelMember;
+        private System.Windows.Forms.Label uxActivityLabel;
+        private System.Windows.Forms.TextBox uxActivityName;
+        private System.Windows.Forms.DateTimePicker uxActivityDate;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

@@ -92,7 +92,7 @@ namespace Museum_Project
             {
                 output = output + $"{dataReader.GetValue(0)} - {dataReader.GetValue(1)} - {dataReader.GetValue(2)} \n";
             }
-            uxTrasactions.Text = output;
+            uxResults.Text = output;
         }
 
         private void onConnectClick(object sender, EventArgs e)
@@ -104,13 +104,10 @@ namespace Museum_Project
             MessageBox.Show("Connection Open!");
         }
 
-        private void queryBtn_Click(object sender, EventArgs e)
+        private void uxEmailLabel_Click(object sender, EventArgs e)
         {
-            var qWindow = new QueryForm();
-            qWindow.Show();
-            
-        }
 
+        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {

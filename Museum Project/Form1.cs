@@ -23,6 +23,7 @@ namespace Museum_Project
         public MuseumApp()
         {
             InitializeComponent();
+            connectBtn.Click += onConnectClick;
         }
         ErrorProvider errorProvider = new ErrorProvider();
 
@@ -39,9 +40,14 @@ namespace Museum_Project
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                var newM = new Member(Convert.ToInt32(uxMemberID.Text), uxFirstName.Text + " " + uxLastName.Text, uxEmailAddress.Text, uxDoBPick.Value.Day, uxDoBPick.Value.Month, uxDoBPick.Value.Year, Convert.ToInt32(uxZipCode.Text));
+                var newM = new Member(0, uxFirstName.Text + " " + uxLastName.Text, uxEmailAddress.Text, uxDoBPick.Value.Day, uxDoBPick.Value.Month, uxDoBPick.Value.Year, Convert.ToInt32(uxZipCode.Text));
                 sql = $"INSERT INTO Project.Member(MembershipId,[Name],Email,DateOfBirth,IsPrimary,ZipCode)" +
-                      $"VALUES(1,{newM.Name},{newM.Email},{newM.DoB}, 1,{newM.Zip.ToString()})";
+                      $"VALUES(1,N'{newM.Name}',N'{newM.Email}',N'{newM.DoB}', 1,N'{newM.Zip.ToString()}')";
+                command = new SqlCommand(sql, cnn);
+
+                dataAdapter.InsertCommand = command;
+                dataAdapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
             }
         }
 

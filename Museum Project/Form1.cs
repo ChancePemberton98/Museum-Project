@@ -28,15 +28,7 @@ namespace Museum_Project
         }
         ErrorProvider errorProvider = new ErrorProvider();
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uxNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void uxAdd_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
@@ -92,16 +84,17 @@ namespace Museum_Project
             {
                 output = output + $"{dataReader.GetValue(0)} - {dataReader.GetValue(1)} - {dataReader.GetValue(2)} \n";
             }
+            dataReader.Close();
             uxResults.Text = output;
         }
 
         private void onConnectClick(object sender, EventArgs e)
         {
-            string connetionString;
-            connetionString = $@"Data Source=mssql.cs.ksu.edu;Initial Catalog={usernameTxt.Text};User ID={usernameTxt.Text};Password={passwordTxt.Text}";
-            cnn = new SqlConnection(connetionString);
+            string connectionString;
+            connectionString = $@"Data Source=mssql.cs.ksu.edu;Initial Catalog={usernameTxt.Text};User ID={usernameTxt.Text};Password={passwordTxt.Text}";
+            cnn = new SqlConnection(connectionString);
             cnn.Open();
-            MessageBox.Show("Connection Open!");
+            uxResults.Text = "Connection Open!";
         }
 
         private void uxEmailLabel_Click(object sender, EventArgs e)
@@ -110,6 +103,16 @@ namespace Museum_Project
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uxNameLabel_Click(object sender, EventArgs e)
         {
 
         }

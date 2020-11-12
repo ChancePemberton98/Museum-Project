@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace Museum_Project
 {
     public partial class MuseumApp : Form
     {
+        SqlConnection cnn;
+        SqlCommand command;
+        SqlDataReader dataReader;
+        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        String sql, output = "";
+
         public MuseumApp()
         {
             InitializeComponent();
@@ -31,12 +39,9 @@ namespace Museum_Project
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                new Member(Convert.ToInt32(uxMemberID), uxFirstName.Text + " " + uxLastName.Text, uxEmailAddress.Text, uxDoBPick.Value.Day, uxDoBPick.Value.Month, uxDoBPick.Value.Year, Convert.ToInt32(uxZipCode.Text));
-                /*
-                 * 
-                 * Implement a way to add to database here maybe?
-                 * 
-                 */
+                var newM = new Member(Convert.ToInt32(uxMemberID.Text), uxFirstName.Text + " " + uxLastName.Text, uxEmailAddress.Text, uxDoBPick.Value.Day, uxDoBPick.Value.Month, uxDoBPick.Value.Year, Convert.ToInt32(uxZipCode.Text));
+                sql = $"INSERT INTO Project.Member(MembershipId,[Name],Email,DateOfBirth,IsPrimary,ZipCode)" +
+                      $"VALUES(1,{newM.Name},{newM.Email},{newM.DoB}, 1,{newM.Zip.ToString()})";
             }
         }
 
@@ -81,5 +86,20 @@ namespace Museum_Project
 
         }
 
+        private void onConnectClick(object sender, EventArgs e)
+        {
+            string connetionString;
+            connetionString = $@"Data Source=mssql.cs.ksu.edu;Initial Catalog={usernameTxt.Text};User ID={usernameTxt.Text};Password={passwordTxt.Text}";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            MessageBox.Show("Connection Open!");
+        }
+
+        private void queryBtn_Click(object sender, EventArgs e)
+        {
+            var qWindow = new QueryForm();
+            qWindow.Show();
+            
+        }
     }
 }

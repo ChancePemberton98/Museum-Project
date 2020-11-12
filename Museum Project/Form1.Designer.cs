@@ -44,6 +44,10 @@
             this.uxTransactionsLabel = new System.Windows.Forms.Label();
             this.uxAdd = new System.Windows.Forms.Button();
             this.uxLookup = new System.Windows.Forms.Button();
+            this.queryBtn = new System.Windows.Forms.Button();
+            this.passwordTxt = new System.Windows.Forms.TextBox();
+            this.usernameTxt = new System.Windows.Forms.TextBox();
+            this.connectBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxFirstNameLabel
@@ -184,11 +188,51 @@
             this.uxLookup.Text = "Lookup";
             this.uxLookup.UseVisualStyleBackColor = true;
             // 
+            // queryBtn
+            // 
+            this.queryBtn.Location = new System.Drawing.Point(335, 289);
+            this.queryBtn.Name = "queryBtn";
+            this.queryBtn.Size = new System.Drawing.Size(75, 23);
+            this.queryBtn.TabIndex = 20;
+            this.queryBtn.Text = "Query";
+            this.queryBtn.UseVisualStyleBackColor = true;
+            this.queryBtn.Click += new System.EventHandler(this.queryBtn_Click);
+            // 
+            // passwordTxt
+            // 
+            this.passwordTxt.Location = new System.Drawing.Point(110, 289);
+            this.passwordTxt.Name = "passwordTxt";
+            this.passwordTxt.Size = new System.Drawing.Size(100, 20);
+            this.passwordTxt.TabIndex = 23;
+            this.passwordTxt.Text = "PASSWORD";
+            this.passwordTxt.UseSystemPasswordChar = true;
+            // 
+            // usernameTxt
+            // 
+            this.usernameTxt.Location = new System.Drawing.Point(4, 289);
+            this.usernameTxt.Name = "usernameTxt";
+            this.usernameTxt.Size = new System.Drawing.Size(100, 20);
+            this.usernameTxt.TabIndex = 22;
+            this.usernameTxt.Text = "USERNAME";
+            // 
+            // connectBtn
+            // 
+            this.connectBtn.Location = new System.Drawing.Point(216, 287);
+            this.connectBtn.Name = "connectBtn";
+            this.connectBtn.Size = new System.Drawing.Size(75, 23);
+            this.connectBtn.TabIndex = 21;
+            this.connectBtn.Text = "Connect";
+            this.connectBtn.UseVisualStyleBackColor = true;
+            // 
             // MuseumApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 312);
+            this.Controls.Add(this.passwordTxt);
+            this.Controls.Add(this.usernameTxt);
+            this.Controls.Add(this.connectBtn);
+            this.Controls.Add(this.queryBtn);
             this.Controls.Add(this.uxLookup);
             this.Controls.Add(this.uxAdd);
             this.Controls.Add(this.uxTransactionsLabel);
@@ -230,6 +274,10 @@
         private System.Windows.Forms.Label uxTransactionsLabel;
         private System.Windows.Forms.Button uxAdd;
         private System.Windows.Forms.Button uxLookup;
+        private System.Windows.Forms.Button queryBtn;
+        private System.Windows.Forms.TextBox passwordTxt;
+        private System.Windows.Forms.TextBox usernameTxt;
+        private System.Windows.Forms.Button connectBtn;
     }
 }
 

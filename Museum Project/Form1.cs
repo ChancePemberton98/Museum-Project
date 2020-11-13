@@ -40,8 +40,6 @@ namespace Museum_Project
 
         private void uxAdd_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
                 try
                 {
                     if (uxNewMembership.Checked == false)
@@ -78,7 +76,7 @@ namespace Museum_Project
                 uxResults.Text = output;
                 showMemberInfo();
                 output = "";
-            }
+            
         }
 
         private void uxFirstName_Validating(object sender, CancelEventArgs e)
@@ -207,7 +205,7 @@ namespace Museum_Project
             {
                 if(uxActivityId.Text != "")
                 {
-                    sql = $" SELECT A.ActivityName, CAST(A.ActivityDate AS DATE) AS ActivityDate, A.Fee, COUNT(DISTINCT AA.MemberId) AS Registered " +
+                    sql = $" SELECT A.ActivityName, CAST(A.ActivityDate AS DATE) AS ActivityDate, A.Fee, COUNT(AA.MemberId) AS Registered " +
                       $" FROM Project.Activity A " +
                       $" LEFT JOIN Project.ActivityAttendee AA ON AA.ActivityId = A.ActivityId " +
                       $" WHERE A.ActivityId = {uxActivityId.Text} " +

@@ -64,6 +64,9 @@
             this.uxNewMembership = new System.Windows.Forms.CheckBox();
             this.uxActivityIdLabel = new System.Windows.Forms.Label();
             this.uxActivityId = new System.Windows.Forms.TextBox();
+            this.uxVisitBtn = new System.Windows.Forms.Button();
+            this.uxTransactionsBtn = new System.Windows.Forms.Button();
+            this.uxReportsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uxActivityFee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +140,7 @@
             // 
             // uxFirstName
             // 
+            this.uxFirstName.CausesValidation = false;
             this.uxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxFirstName.Location = new System.Drawing.Point(130, 36);
             this.uxFirstName.Name = "uxFirstName";
@@ -156,6 +160,7 @@
             // 
             // uxLastName
             // 
+            this.uxLastName.CausesValidation = false;
             this.uxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxLastName.Location = new System.Drawing.Point(316, 36);
             this.uxLastName.Name = "uxLastName";
@@ -189,19 +194,19 @@
             this.uxResults.Multiline = true;
             this.uxResults.Name = "uxResults";
             this.uxResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.uxResults.Size = new System.Drawing.Size(404, 479);
+            this.uxResults.Size = new System.Drawing.Size(404, 523);
             this.uxResults.TabIndex = 16;
             this.uxResults.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // uxTransactionsLabel
             // 
             this.uxTransactionsLabel.AutoSize = true;
-            this.uxTransactionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxTransactionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxTransactionsLabel.Location = new System.Drawing.Point(620, 9);
             this.uxTransactionsLabel.Name = "uxTransactionsLabel";
-            this.uxTransactionsLabel.Size = new System.Drawing.Size(67, 20);
+            this.uxTransactionsLabel.Size = new System.Drawing.Size(63, 20);
             this.uxTransactionsLabel.TabIndex = 17;
-            this.uxTransactionsLabel.Text = "Results:";
+            this.uxTransactionsLabel.Text = "Results";
             // 
             // uxAdd
             // 
@@ -229,7 +234,7 @@
             // passwordTxt
             // 
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(784, 517);
+            this.passwordTxt.Location = new System.Drawing.Point(784, 561);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(146, 26);
             this.passwordTxt.TabIndex = 23;
@@ -239,7 +244,7 @@
             // usernameTxt
             // 
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxt.Location = new System.Drawing.Point(624, 517);
+            this.usernameTxt.Location = new System.Drawing.Point(624, 561);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(154, 26);
             this.usernameTxt.TabIndex = 22;
@@ -248,7 +253,7 @@
             // connectBtn
             // 
             this.connectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectBtn.Location = new System.Drawing.Point(936, 517);
+            this.connectBtn.Location = new System.Drawing.Point(936, 561);
             this.connectBtn.Name = "connectBtn";
             this.connectBtn.Size = new System.Drawing.Size(92, 26);
             this.connectBtn.TabIndex = 21;
@@ -269,7 +274,7 @@
             // 
             this.uxActivityLabel.AutoSize = true;
             this.uxActivityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxActivityLabel.Location = new System.Drawing.Point(6, 289);
+            this.uxActivityLabel.Location = new System.Drawing.Point(5, 339);
             this.uxActivityLabel.Name = "uxActivityLabel";
             this.uxActivityLabel.Size = new System.Drawing.Size(58, 20);
             this.uxActivityLabel.TabIndex = 25;
@@ -278,7 +283,7 @@
             // uxActivityName
             // 
             this.uxActivityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxActivityName.Location = new System.Drawing.Point(129, 315);
+            this.uxActivityName.Location = new System.Drawing.Point(128, 365);
             this.uxActivityName.Name = "uxActivityName";
             this.uxActivityName.Size = new System.Drawing.Size(278, 26);
             this.uxActivityName.TabIndex = 26;
@@ -287,7 +292,7 @@
             // 
             this.uxActivityDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxActivityDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.uxActivityDate.Location = new System.Drawing.Point(129, 379);
+            this.uxActivityDate.Location = new System.Drawing.Point(128, 429);
             this.uxActivityDate.Name = "uxActivityDate";
             this.uxActivityDate.Size = new System.Drawing.Size(120, 26);
             this.uxActivityDate.TabIndex = 27;
@@ -296,7 +301,7 @@
             // 
             this.uxActivityFee.DecimalPlaces = 2;
             this.uxActivityFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxActivityFee.Location = new System.Drawing.Point(129, 410);
+            this.uxActivityFee.Location = new System.Drawing.Point(128, 460);
             this.uxActivityFee.Name = "uxActivityFee";
             this.uxActivityFee.Size = new System.Drawing.Size(120, 26);
             this.uxActivityFee.TabIndex = 28;
@@ -305,7 +310,7 @@
             // 
             this.uxActivityNameLabel.AutoSize = true;
             this.uxActivityNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxActivityNameLabel.Location = new System.Drawing.Point(6, 318);
+            this.uxActivityNameLabel.Location = new System.Drawing.Point(5, 368);
             this.uxActivityNameLabel.Name = "uxActivityNameLabel";
             this.uxActivityNameLabel.Size = new System.Drawing.Size(108, 20);
             this.uxActivityNameLabel.TabIndex = 29;
@@ -315,7 +320,7 @@
             // 
             this.uxActivityDateLabel.AutoSize = true;
             this.uxActivityDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxActivityDateLabel.Location = new System.Drawing.Point(6, 383);
+            this.uxActivityDateLabel.Location = new System.Drawing.Point(5, 433);
             this.uxActivityDateLabel.Name = "uxActivityDateLabel";
             this.uxActivityDateLabel.Size = new System.Drawing.Size(101, 20);
             this.uxActivityDateLabel.TabIndex = 30;
@@ -325,7 +330,7 @@
             // 
             this.uxFeeLabel.AutoSize = true;
             this.uxFeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxFeeLabel.Location = new System.Drawing.Point(6, 412);
+            this.uxFeeLabel.Location = new System.Drawing.Point(5, 462);
             this.uxFeeLabel.Name = "uxFeeLabel";
             this.uxFeeLabel.Size = new System.Drawing.Size(41, 20);
             this.uxFeeLabel.TabIndex = 31;
@@ -335,7 +340,7 @@
             // 
             this.uxLookUpActivityBtn.Enabled = false;
             this.uxLookUpActivityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxLookUpActivityBtn.Location = new System.Drawing.Point(276, 442);
+            this.uxLookUpActivityBtn.Location = new System.Drawing.Point(275, 492);
             this.uxLookUpActivityBtn.Name = "uxLookUpActivityBtn";
             this.uxLookUpActivityBtn.Size = new System.Drawing.Size(141, 46);
             this.uxLookUpActivityBtn.TabIndex = 33;
@@ -346,7 +351,7 @@
             // 
             this.uxAddActivityBtn.Enabled = false;
             this.uxAddActivityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxAddActivityBtn.Location = new System.Drawing.Point(129, 442);
+            this.uxAddActivityBtn.Location = new System.Drawing.Point(128, 492);
             this.uxAddActivityBtn.Name = "uxAddActivityBtn";
             this.uxAddActivityBtn.Size = new System.Drawing.Size(141, 46);
             this.uxAddActivityBtn.TabIndex = 32;
@@ -357,7 +362,7 @@
             // 
             this.uxRegisterBtn.Enabled = false;
             this.uxRegisterBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRegisterBtn.Location = new System.Drawing.Point(129, 494);
+            this.uxRegisterBtn.Location = new System.Drawing.Point(128, 544);
             this.uxRegisterBtn.Name = "uxRegisterBtn";
             this.uxRegisterBtn.Size = new System.Drawing.Size(141, 46);
             this.uxRegisterBtn.TabIndex = 34;
@@ -368,7 +373,7 @@
             // 
             this.uxShowAttendees.Enabled = false;
             this.uxShowAttendees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxShowAttendees.Location = new System.Drawing.Point(276, 494);
+            this.uxShowAttendees.Location = new System.Drawing.Point(275, 544);
             this.uxShowAttendees.Name = "uxShowAttendees";
             this.uxShowAttendees.Size = new System.Drawing.Size(141, 46);
             this.uxShowAttendees.TabIndex = 35;
@@ -408,7 +413,7 @@
             // 
             this.uxActivityIdLabel.AutoSize = true;
             this.uxActivityIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxActivityIdLabel.Location = new System.Drawing.Point(6, 350);
+            this.uxActivityIdLabel.Location = new System.Drawing.Point(5, 400);
             this.uxActivityIdLabel.Name = "uxActivityIdLabel";
             this.uxActivityIdLabel.Size = new System.Drawing.Size(80, 20);
             this.uxActivityIdLabel.TabIndex = 40;
@@ -417,16 +422,52 @@
             // uxActivityId
             // 
             this.uxActivityId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxActivityId.Location = new System.Drawing.Point(129, 347);
+            this.uxActivityId.Location = new System.Drawing.Point(128, 397);
             this.uxActivityId.Name = "uxActivityId";
             this.uxActivityId.Size = new System.Drawing.Size(278, 26);
             this.uxActivityId.TabIndex = 39;
+            // 
+            // uxVisitBtn
+            // 
+            this.uxVisitBtn.Enabled = false;
+            this.uxVisitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxVisitBtn.Location = new System.Drawing.Point(130, 280);
+            this.uxVisitBtn.Name = "uxVisitBtn";
+            this.uxVisitBtn.Size = new System.Drawing.Size(140, 46);
+            this.uxVisitBtn.TabIndex = 41;
+            this.uxVisitBtn.Text = "Visit";
+            this.uxVisitBtn.UseVisualStyleBackColor = true;
+            // 
+            // uxTransactionsBtn
+            // 
+            this.uxTransactionsBtn.Enabled = false;
+            this.uxTransactionsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxTransactionsBtn.Location = new System.Drawing.Point(275, 280);
+            this.uxTransactionsBtn.Name = "uxTransactionsBtn";
+            this.uxTransactionsBtn.Size = new System.Drawing.Size(131, 46);
+            this.uxTransactionsBtn.TabIndex = 42;
+            this.uxTransactionsBtn.Text = "Transactions";
+            this.uxTransactionsBtn.UseVisualStyleBackColor = true;
+            // 
+            // uxReportsBtn
+            // 
+            this.uxReportsBtn.Enabled = false;
+            this.uxReportsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxReportsBtn.Location = new System.Drawing.Point(422, 492);
+            this.uxReportsBtn.Name = "uxReportsBtn";
+            this.uxReportsBtn.Size = new System.Drawing.Size(196, 95);
+            this.uxReportsBtn.TabIndex = 43;
+            this.uxReportsBtn.Text = "Reports";
+            this.uxReportsBtn.UseVisualStyleBackColor = true;
             // 
             // MuseumApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 555);
+            this.ClientSize = new System.Drawing.Size(1040, 599);
+            this.Controls.Add(this.uxReportsBtn);
+            this.Controls.Add(this.uxTransactionsBtn);
+            this.Controls.Add(this.uxVisitBtn);
             this.Controls.Add(this.uxActivityIdLabel);
             this.Controls.Add(this.uxActivityId);
             this.Controls.Add(this.uxNewMembership);
@@ -510,6 +551,9 @@
         private System.Windows.Forms.CheckBox uxNewMembership;
         private System.Windows.Forms.Label uxActivityIdLabel;
         private System.Windows.Forms.TextBox uxActivityId;
+        private System.Windows.Forms.Button uxVisitBtn;
+        private System.Windows.Forms.Button uxTransactionsBtn;
+        private System.Windows.Forms.Button uxReportsBtn;
     }
 }
 

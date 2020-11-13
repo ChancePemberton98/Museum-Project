@@ -57,6 +57,8 @@
             this.uxFeeLabel = new System.Windows.Forms.Label();
             this.uxLookUpActivityBtn = new System.Windows.Forms.Button();
             this.uxAddActivityBtn = new System.Windows.Forms.Button();
+            this.uxRegisterBtn = new System.Windows.Forms.Button();
+            this.uxShowAttendees = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uxActivityFee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +107,7 @@
             // uxDoBPick
             // 
             this.uxDoBPick.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxDoBPick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.uxDoBPick.Location = new System.Drawing.Point(117, 132);
             this.uxDoBPick.Name = "uxDoBPick";
             this.uxDoBPick.Size = new System.Drawing.Size(278, 26);
@@ -177,11 +180,11 @@
             // uxResults
             // 
             this.uxResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxResults.Location = new System.Drawing.Point(686, 32);
+            this.uxResults.Location = new System.Drawing.Point(624, 32);
             this.uxResults.Multiline = true;
             this.uxResults.Name = "uxResults";
             this.uxResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.uxResults.Size = new System.Drawing.Size(342, 398);
+            this.uxResults.Size = new System.Drawing.Size(404, 447);
             this.uxResults.TabIndex = 16;
             this.uxResults.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -189,7 +192,7 @@
             // 
             this.uxTransactionsLabel.AutoSize = true;
             this.uxTransactionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxTransactionsLabel.Location = new System.Drawing.Point(682, 9);
+            this.uxTransactionsLabel.Location = new System.Drawing.Point(620, 9);
             this.uxTransactionsLabel.Name = "uxTransactionsLabel";
             this.uxTransactionsLabel.Size = new System.Drawing.Size(67, 20);
             this.uxTransactionsLabel.TabIndex = 17;
@@ -197,6 +200,7 @@
             // 
             // uxAdd
             // 
+            this.uxAdd.Enabled = false;
             this.uxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxAdd.Location = new System.Drawing.Point(117, 196);
             this.uxAdd.Name = "uxAdd";
@@ -208,6 +212,7 @@
             // 
             // uxLookup
             // 
+            this.uxLookup.Enabled = false;
             this.uxLookup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxLookup.Location = new System.Drawing.Point(264, 196);
             this.uxLookup.Name = "uxLookup";
@@ -218,7 +223,7 @@
             // 
             // passwordTxt
             // 
-            this.passwordTxt.Location = new System.Drawing.Point(928, 462);
+            this.passwordTxt.Location = new System.Drawing.Point(822, 488);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(100, 20);
             this.passwordTxt.TabIndex = 23;
@@ -227,7 +232,7 @@
             // 
             // usernameTxt
             // 
-            this.usernameTxt.Location = new System.Drawing.Point(928, 436);
+            this.usernameTxt.Location = new System.Drawing.Point(716, 488);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(100, 20);
             this.usernameTxt.TabIndex = 22;
@@ -235,7 +240,7 @@
             // 
             // connectBtn
             // 
-            this.connectBtn.Location = new System.Drawing.Point(928, 488);
+            this.connectBtn.Location = new System.Drawing.Point(928, 485);
             this.connectBtn.Name = "connectBtn";
             this.connectBtn.Size = new System.Drawing.Size(100, 23);
             this.connectBtn.TabIndex = 21;
@@ -273,6 +278,7 @@
             // uxActivityDate
             // 
             this.uxActivityDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxActivityDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.uxActivityDate.Location = new System.Drawing.Point(117, 309);
             this.uxActivityDate.Name = "uxActivityDate";
             this.uxActivityDate.Size = new System.Drawing.Size(278, 26);
@@ -319,16 +325,18 @@
             // 
             // uxLookUpActivityBtn
             // 
+            this.uxLookUpActivityBtn.Enabled = false;
             this.uxLookUpActivityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxLookUpActivityBtn.Location = new System.Drawing.Point(264, 373);
             this.uxLookUpActivityBtn.Name = "uxLookUpActivityBtn";
-            this.uxLookUpActivityBtn.Size = new System.Drawing.Size(131, 46);
+            this.uxLookUpActivityBtn.Size = new System.Drawing.Size(141, 46);
             this.uxLookUpActivityBtn.TabIndex = 33;
             this.uxLookUpActivityBtn.Text = "Lookup";
             this.uxLookUpActivityBtn.UseVisualStyleBackColor = true;
             // 
             // uxAddActivityBtn
             // 
+            this.uxAddActivityBtn.Enabled = false;
             this.uxAddActivityBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxAddActivityBtn.Location = new System.Drawing.Point(117, 373);
             this.uxAddActivityBtn.Name = "uxAddActivityBtn";
@@ -337,11 +345,35 @@
             this.uxAddActivityBtn.Text = "Add";
             this.uxAddActivityBtn.UseVisualStyleBackColor = true;
             // 
+            // uxRegisterBtn
+            // 
+            this.uxRegisterBtn.Enabled = false;
+            this.uxRegisterBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxRegisterBtn.Location = new System.Drawing.Point(117, 425);
+            this.uxRegisterBtn.Name = "uxRegisterBtn";
+            this.uxRegisterBtn.Size = new System.Drawing.Size(141, 46);
+            this.uxRegisterBtn.TabIndex = 34;
+            this.uxRegisterBtn.Text = "Register";
+            this.uxRegisterBtn.UseVisualStyleBackColor = true;
+            // 
+            // uxShowAttendees
+            // 
+            this.uxShowAttendees.Enabled = false;
+            this.uxShowAttendees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxShowAttendees.Location = new System.Drawing.Point(264, 425);
+            this.uxShowAttendees.Name = "uxShowAttendees";
+            this.uxShowAttendees.Size = new System.Drawing.Size(141, 46);
+            this.uxShowAttendees.TabIndex = 35;
+            this.uxShowAttendees.Text = "Show Attendees";
+            this.uxShowAttendees.UseVisualStyleBackColor = true;
+            // 
             // MuseumApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 520);
+            this.Controls.Add(this.uxShowAttendees);
+            this.Controls.Add(this.uxRegisterBtn);
             this.Controls.Add(this.uxLookUpActivityBtn);
             this.Controls.Add(this.uxAddActivityBtn);
             this.Controls.Add(this.uxFeeLabel);
@@ -373,6 +405,7 @@
             this.Controls.Add(this.uxFirstNameLabel);
             this.Name = "MuseumApp";
             this.Text = "Museum Project";
+            this.Load += new System.EventHandler(this.MuseumApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uxActivityFee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -410,6 +443,8 @@
         private System.Windows.Forms.Label uxFeeLabel;
         private System.Windows.Forms.Button uxLookUpActivityBtn;
         private System.Windows.Forms.Button uxAddActivityBtn;
+        private System.Windows.Forms.Button uxRegisterBtn;
+        private System.Windows.Forms.Button uxShowAttendees;
     }
 }
 

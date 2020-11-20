@@ -18,10 +18,19 @@ namespace Museum_Project
         public ReportSelector()
         {
             InitializeComponent();
+            reports.Add("VisitorsWithin100Miles");
+            reports.Add("MonthlyMemberShipReport");
+            reports.Add("SixMonthActivityRegistrationReport");
+            reports.Add("WeeklyGuestReport");
+            reports.Add("GuestsReport");
+            reports.Add("MonthlyVisitorReport");
+            reports.Add("SixMonthMembershipReport");
+            reports.Add("MonthlyTransactionReport");
+            reports.Add("MembersWithin100Miles");
+            reports.Add("Show_All_Members");
             uxCancelBtn.Click += onCancelButtonClick;
             uxRunReportBtn.Click += onRunClick;
             uxReportSelectComboBox.DataSource = reports;
-
         }
 
         /// <summary>

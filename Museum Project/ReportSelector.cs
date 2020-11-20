@@ -24,13 +24,24 @@ namespace Museum_Project
 
         }
 
-
+        /// <summary>
+        /// Sets the static MuseumApp.sql string to an approprite string for the 
+        /// selected report to be run. The selector is then closed.
+        /// IN PROGRESS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onRunClick(object sender, EventArgs e)
         {
             MuseumApp.sql = $"EXECUTE {uxReportSelectComboBox.SelectedItem.ToString()}";
             Close();
         }
 
+        /// <summary>
+        /// Sets the Museum.sql string to be empty so no report is run and closes the selector.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onCancelButtonClick(object sender, EventArgs e)
         {
             MuseumApp.sql = "";

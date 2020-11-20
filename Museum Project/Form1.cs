@@ -35,11 +35,21 @@ namespace Museum_Project
         }
         ErrorProvider errorProvider = new ErrorProvider();
 
+        /// <summary>
+        /// Closes the sql connection when the main form closes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onFormClosed(object sender, EventArgs e)
         {
             if(cnn != null) cnn.Close();
         }
 
+        /// <summary>
+        /// Adds a new member to the database using the sql connection.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxAdd_Click(object sender, EventArgs e)
         {
                 try
@@ -81,6 +91,11 @@ namespace Museum_Project
             
         }
 
+        /// <summary>
+        /// validates the entry of a first name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxFirstName_Validating(object sender, CancelEventArgs e)
         {
             if(string.IsNullOrEmpty(uxFirstName.Text))
@@ -96,6 +111,11 @@ namespace Museum_Project
             }
         }
 
+        /// <summary>
+        /// validates the entry of a last name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxLastName_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(uxLastName.Text))
@@ -111,6 +131,11 @@ namespace Museum_Project
             }
         }
         
+        /// <summary>
+        /// Looks up Members based on the values currently entered into the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onLookupClick(object sender, EventArgs e)
         {
             try
@@ -158,6 +183,12 @@ namespace Museum_Project
 
         }
 
+        /// <summary>
+        /// Trys to connect to the sql database attached to the username given. If succesful
+        /// the main form buttons are enabled.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onConnectClick(object sender, EventArgs e)
         {
             string connectionString;
@@ -181,6 +212,11 @@ namespace Museum_Project
             }
         }
 
+        /// <summary>
+        /// Adds an activity to the database using the sql connection.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onActivityAddClick(object sender, EventArgs e)
         {
             try
@@ -202,6 +238,11 @@ namespace Museum_Project
             output = "";
         }
 
+        /// <summary>
+        /// Looks up activites in the database based on the currently entered information.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onLookupActivityClick(object sender, EventArgs e)
         {
             try
@@ -244,8 +285,13 @@ namespace Museum_Project
             uxResults.Text = output;
             output = "";
             
-    }
+        }
 
+        /// <summary>
+        /// Registers the member attached to the entered memberId to the activity attached to the entered activityId
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onRegisterClick(object sender, EventArgs e)
         {
             try
@@ -266,6 +312,11 @@ namespace Museum_Project
             command.Dispose();
         }
 
+        /// <summary>
+        /// Shows all attendees for the activity with the given ActivityId
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onShowAttendeesClick(object sender, EventArgs e)
         {
             try
@@ -307,6 +358,9 @@ namespace Museum_Project
             output = "";
         }
 
+        /// <summary>
+        /// Shows the member info for the member with the entered email in the results box
+        /// </summary>
         private void showMemberInfo()
         {
             try
@@ -333,6 +387,15 @@ namespace Museum_Project
             output = "";
         }
 
+        /// <summary>
+        /// Opens the ReportSelector for the user to chose a report to run.
+        /// If a report is picked and run the 'sql' string is set to execute the
+        /// selected report and then used to get the data from the database via
+        /// the sql server connection. If cancel is selected no attempt is made
+        /// to run a report.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onReportClick(object sender, EventArgs e)
         {
             var reportSelect = new ReportSelector();

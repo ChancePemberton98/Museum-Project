@@ -31,6 +31,7 @@ namespace Museum_Project
             uxRegisterBtn.Click += onRegisterClick;
             uxShowAttendees.Click += onShowAttendeesClick;
             uxReportsBtn.Click += onReportClick;
+            uxTransactionsBtn.Click += onTransactionsClick;
             this.FormClosed += onFormClosed;
         }
         ErrorProvider errorProvider = new ErrorProvider();
@@ -205,6 +206,7 @@ namespace Museum_Project
                 uxRegisterBtn.Enabled = true;
                 uxShowAttendees.Enabled = true;
                 uxReportsBtn.Enabled = true;
+                uxTransactionsBtn.Enabled = true;
             }
             catch (Exception)
             {
@@ -424,6 +426,34 @@ namespace Museum_Project
                 output = "";
             }
 
+        }
+         /// <summary>
+         /// Shows transactions tied to the given MemberId
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
+        private void onTransactionsClick(object sender, EventArgs e)
+        {
+            sql = $"EXEC MemberTransactions @MEMBERID = {uxMemberID.Text}";
+            try
+            {
+                command = new SqlCommand(sql, cnn);
+                dataReader = command.ExecuteReader();
+
+                DataTable dispalyTable = new DataTable();
+                dispalyTable.Load(dataReader);
+                DataGridView gridView = new DataGridView(dispalyTable);
+                gridView.Text = sql;
+                gridView.Show();
+
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                output = ex.Message;
+            }
+            uxResults.Text = output;
+            output = "";
         }
 
         private void uxEmailLabel_Click(object sender, EventArgs e)

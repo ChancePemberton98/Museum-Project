@@ -80,7 +80,7 @@
             this.Controls.Add(this.uxReportDescriptionBox);
             this.Controls.Add(this.uxReportSelectComboBox);
             this.Name = "ReportSelector";
-            this.Text = "ReportSelector";
+            this.Text = "Report Selector";
             this.ResumeLayout(false);
             this.PerformLayout();
 

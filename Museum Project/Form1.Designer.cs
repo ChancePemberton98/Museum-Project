@@ -504,6 +504,7 @@
             this.Controls.Add(this.uxEmailLabel);
             this.Controls.Add(this.uxMemberIDLabel);
             this.Controls.Add(this.uxFirstNameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MuseumApp";
             this.Text = "Museum Project";
             this.Load += new System.EventHandler(this.MuseumApp_Load);

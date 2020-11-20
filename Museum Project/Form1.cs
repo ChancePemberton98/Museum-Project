@@ -30,6 +30,7 @@ namespace Museum_Project
             uxLookUpActivityBtn.Click += onLookupActivityClick;
             uxRegisterBtn.Click += onRegisterClick;
             uxShowAttendees.Click += onShowAttendeesClick;
+            uxReportsBtn.Click += onReportClick;
             this.FormClosed += onFormClosed;
         }
         ErrorProvider errorProvider = new ErrorProvider();
@@ -172,6 +173,7 @@ namespace Museum_Project
                 uxLookUpActivityBtn.Enabled = true;
                 uxRegisterBtn.Enabled = true;
                 uxShowAttendees.Enabled = true;
+                uxReportsBtn.Enabled = true;
             }
             catch (Exception)
             {
@@ -329,6 +331,13 @@ namespace Museum_Project
             }
             uxResults.Text = output;
             output = "";
+        }
+
+        private void onReportClick(object sender, EventArgs e)
+        {
+            var reportSelect = new ReportSelector();
+            reportSelect.Show();
+
         }
 
         private void uxEmailLabel_Click(object sender, EventArgs e)

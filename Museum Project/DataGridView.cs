@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Museum_Project
 {
+    
     public partial class DataGridView : Form
     {
+        private DataTable dataSource;
+
         public DataGridView()
         {
             InitializeComponent();
@@ -20,7 +23,8 @@ namespace Museum_Project
         public DataGridView(DataTable table)
         {
             InitializeComponent();
-            uxDataGridView.DataSource = table;
+            dataSource = table;
+            uxDataGridView.DataSource = dataSource;
         }
     }
 }

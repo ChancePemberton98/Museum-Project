@@ -18,7 +18,7 @@ namespace Museum_Project
         SqlCommand command;
         SqlDataReader dataReader;
         SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        static string sql; 
+        public static string sql; 
         string output = "";
 
         public MuseumApp()
@@ -337,6 +337,31 @@ namespace Museum_Project
         {
             var reportSelect = new ReportSelector();
             reportSelect.Show();
+
+            if(sql != "")
+            {
+                try
+                {
+                    command = new SqlCommand(sql, cnn);
+                    dataReader = command.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        //THIS OUTPUT NEEDS TO CHANGE
+                        output = output + $"MEMBER ID:{dataReader.GetValue(0)}\r\n" +
+                                          $"MEMBERSHIP ID:{dataReader.GetValue(1)}\r\n" +
+                                          $"NAME:{dataReader.GetValue(2)}\r\n" +
+                                          $"EMAIL:{dataReader.GetValue(3)}\r\n\r\n";
+                    }
+                    dataReader.Close();
+                }
+                catch (Exception ex)
+                {
+                    output = ex.Message;
+                }
+                uxResults.Text = output;
+                output = "";
+            }
 
         }
 

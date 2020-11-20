@@ -455,7 +455,7 @@
             this.uxReportsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxReportsBtn.Location = new System.Drawing.Point(422, 492);
             this.uxReportsBtn.Name = "uxReportsBtn";
-            this.uxReportsBtn.Size = new System.Drawing.Size(196, 95);
+            this.uxReportsBtn.Size = new System.Drawing.Size(196, 98);
             this.uxReportsBtn.TabIndex = 43;
             this.uxReportsBtn.Text = "Reports";
             this.uxReportsBtn.UseVisualStyleBackColor = true;

@@ -32,6 +32,7 @@ namespace Museum_Project
             uxShowAttendees.Click += onShowAttendeesClick;
             uxReportsBtn.Click += onReportClick;
             uxTransactionsBtn.Click += onTransactionsClick;
+            uxVisitBtn.Click += onVisitClick;
             this.FormClosed += onFormClosed;
         }
         ErrorProvider errorProvider = new ErrorProvider();
@@ -207,6 +208,7 @@ namespace Museum_Project
                 uxShowAttendees.Enabled = true;
                 uxReportsBtn.Enabled = true;
                 uxTransactionsBtn.Enabled = true;
+                uxVisitBtn.Enabled = true;
             }
             catch (Exception)
             {
@@ -454,6 +456,35 @@ namespace Museum_Project
             }
             uxResults.Text = output;
             output = "";
+        }
+
+        private void onVisitClick(object sender, EventArgs e)
+        {
+            var visitHandler = new VisitHandler();
+            visitHandler.ShowDialog();
+
+            if (sql != "")
+            {
+                try
+                {
+                    command = new SqlCommand(sql, cnn);
+                    dataReader = command.ExecuteReader();
+
+                    DataTable dispalyTable = new DataTable();
+                    dispalyTable.Load(dataReader);
+                    DataGridView gridView = new DataGridView(dispalyTable);
+                    gridView.Text = sql;
+                    gridView.Show();
+
+                    dataReader.Close();
+                }
+                catch (Exception ex)
+                {
+                    output = ex.Message;
+                }
+                uxResults.Text = output;
+                output = "";
+            }
         }
 
         private void uxEmailLabel_Click(object sender, EventArgs e)

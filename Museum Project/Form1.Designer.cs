@@ -119,7 +119,7 @@
             this.uxDoBPick.Location = new System.Drawing.Point(129, 165);
             this.uxDoBPick.Name = "uxDoBPick";
             this.uxDoBPick.Size = new System.Drawing.Size(120, 26);
-            this.uxDoBPick.TabIndex = 8;
+            this.uxDoBPick.TabIndex = 6;
             this.uxDoBPick.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // uxEmailAddress
@@ -128,7 +128,7 @@
             this.uxEmailAddress.Location = new System.Drawing.Point(129, 132);
             this.uxEmailAddress.Name = "uxEmailAddress";
             this.uxEmailAddress.Size = new System.Drawing.Size(278, 26);
-            this.uxEmailAddress.TabIndex = 9;
+            this.uxEmailAddress.TabIndex = 5;
             // 
             // uxMemberID
             // 
@@ -136,7 +136,7 @@
             this.uxMemberID.Location = new System.Drawing.Point(130, 68);
             this.uxMemberID.Name = "uxMemberID";
             this.uxMemberID.Size = new System.Drawing.Size(278, 26);
-            this.uxMemberID.TabIndex = 10;
+            this.uxMemberID.TabIndex = 3;
             // 
             // uxFirstName
             // 
@@ -145,7 +145,7 @@
             this.uxFirstName.Location = new System.Drawing.Point(130, 36);
             this.uxFirstName.Name = "uxFirstName";
             this.uxFirstName.Size = new System.Drawing.Size(93, 26);
-            this.uxFirstName.TabIndex = 11;
+            this.uxFirstName.TabIndex = 1;
             this.uxFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.uxFirstName_Validating);
             // 
             // uxLastNameLabel
@@ -165,7 +165,7 @@
             this.uxLastName.Location = new System.Drawing.Point(316, 36);
             this.uxLastName.Name = "uxLastName";
             this.uxLastName.Size = new System.Drawing.Size(92, 26);
-            this.uxLastName.TabIndex = 13;
+            this.uxLastName.TabIndex = 2;
             this.uxLastName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.uxLastName.Validating += new System.ComponentModel.CancelEventHandler(this.uxLastName_Validating);
             // 
@@ -185,7 +185,7 @@
             this.uxZipCode.Location = new System.Drawing.Point(129, 196);
             this.uxZipCode.Name = "uxZipCode";
             this.uxZipCode.Size = new System.Drawing.Size(278, 26);
-            this.uxZipCode.TabIndex = 15;
+            this.uxZipCode.TabIndex = 7;
             // 
             // uxResults
             // 
@@ -237,7 +237,7 @@
             this.passwordTxt.Location = new System.Drawing.Point(784, 561);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(146, 26);
-            this.passwordTxt.TabIndex = 23;
+            this.passwordTxt.TabIndex = 13;
             this.passwordTxt.Text = "PASSWORD";
             this.passwordTxt.UseSystemPasswordChar = true;
             // 
@@ -247,8 +247,9 @@
             this.usernameTxt.Location = new System.Drawing.Point(624, 561);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(154, 26);
-            this.usernameTxt.TabIndex = 22;
+            this.usernameTxt.TabIndex = 12;
             this.usernameTxt.Text = "USERNAME";
+            this.usernameTxt.TextChanged += new System.EventHandler(this.usernameTxt_TextChanged);
             // 
             // connectBtn
             // 
@@ -256,7 +257,7 @@
             this.connectBtn.Location = new System.Drawing.Point(936, 561);
             this.connectBtn.Name = "connectBtn";
             this.connectBtn.Size = new System.Drawing.Size(92, 26);
-            this.connectBtn.TabIndex = 21;
+            this.connectBtn.TabIndex = 14;
             this.connectBtn.Text = "Connect";
             this.connectBtn.UseVisualStyleBackColor = true;
             // 
@@ -286,7 +287,7 @@
             this.uxActivityName.Location = new System.Drawing.Point(128, 365);
             this.uxActivityName.Name = "uxActivityName";
             this.uxActivityName.Size = new System.Drawing.Size(278, 26);
-            this.uxActivityName.TabIndex = 26;
+            this.uxActivityName.TabIndex = 8;
             // 
             // uxActivityDate
             // 
@@ -295,7 +296,7 @@
             this.uxActivityDate.Location = new System.Drawing.Point(128, 429);
             this.uxActivityDate.Name = "uxActivityDate";
             this.uxActivityDate.Size = new System.Drawing.Size(120, 26);
-            this.uxActivityDate.TabIndex = 27;
+            this.uxActivityDate.TabIndex = 10;
             // 
             // uxActivityFee
             // 
@@ -304,7 +305,7 @@
             this.uxActivityFee.Location = new System.Drawing.Point(128, 460);
             this.uxActivityFee.Name = "uxActivityFee";
             this.uxActivityFee.Size = new System.Drawing.Size(120, 26);
-            this.uxActivityFee.TabIndex = 28;
+            this.uxActivityFee.TabIndex = 11;
             // 
             // uxActivityNameLabel
             // 
@@ -386,7 +387,7 @@
             this.uxMembershipId.Location = new System.Drawing.Point(129, 100);
             this.uxMembershipId.Name = "uxMembershipId";
             this.uxMembershipId.Size = new System.Drawing.Size(278, 26);
-            this.uxMembershipId.TabIndex = 37;
+            this.uxMembershipId.TabIndex = 4;
             // 
             // uxMembershipIdLabel
             // 
@@ -425,7 +426,7 @@
             this.uxActivityId.Location = new System.Drawing.Point(128, 397);
             this.uxActivityId.Name = "uxActivityId";
             this.uxActivityId.Size = new System.Drawing.Size(278, 26);
-            this.uxActivityId.TabIndex = 39;
+            this.uxActivityId.TabIndex = 9;
             // 
             // uxVisitBtn
             // 

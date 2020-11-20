@@ -42,20 +42,20 @@ namespace Museum_Project
                 MuseumApp.sql = $" INSERT INTO Project.Visit(Date, Fee) " +
                                  $" VALUES (GETDATE(), {guestCount * 5}) "+
                                  $" INSERT INTO Project.MemberVisit(VisitId, MemberId) " +
-                                 $" VALUES (SYSDATETIMEOFFSET(IDENT_CURRENT('Project.Visit')), {uxMemberID.Text}) ";
+                                 $" VALUES (IDENT_CURRENT('Project.Visit'), {uxMemberID.Text}) ";
             }
 
             if (guestCount > 0)
             {
 
 
-                MuseumApp.sql += $" INSERT INTO Project.Guest(Visit, ZipCode) ";
+                MuseumApp.sql += $" INSERT INTO Project.Guest(VisitId, ZipCode) ";
 
                 foreach (string zip in ZipList)
                 {
                     if (zip.Length == 5)
                     {
-                        MuseumApp.sql += $" ( SELECT IDENT_CURRENT('Visit'),{zip}) ";
+                        MuseumApp.sql += $" ( SELECT IDENT_CURRENT('Project.Visit'),{zip}) ";
                     }
                 }
             }

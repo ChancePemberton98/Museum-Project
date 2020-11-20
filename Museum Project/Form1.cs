@@ -58,6 +58,7 @@ namespace Museum_Project
                 {
                     if (uxNewMembership.Checked == false)
                     {
+                        if(uxMembershipId.Text.Length == 0) { throw new Exception("MembershipId needed to add a member without a new membership!"); }
                         var newM = new Member(0, uxFirstName.Text + " " + uxLastName.Text, uxEmailAddress.Text, uxDoBPick.Value.Day, uxDoBPick.Value.Month, uxDoBPick.Value.Year, Convert.ToInt32(uxZipCode.Text));
                         sql = $" INSERT INTO Project.Member(MembershipId,[Name],Email,DateOfBirth,IsPrimary,ZipCode) " +
                               $" VALUES({uxMembershipId.Text}, N'{uxFirstName.Text} {uxLastName.Text}',N'{uxEmailAddress.Text}',N'{newM.DoB}',0 ,N'{uxZipCode.Text}')";
@@ -253,19 +254,19 @@ namespace Museum_Project
             {
                 if(uxActivityId.Text != "")
                 {
-                    sql = $" SELECT A.ActivityName, CAST(A.ActivityDate AS DATE) AS ActivityDate, A.Fee, COUNT(AA.MemberId) AS Registered " +
+                    sql = $" SELECT A.ActivityName, A.ActivityId, CAST(A.ActivityDate AS DATE) AS ActivityDate, A.Fee, COUNT(AA.MemberId) AS Registered " +
                       $" FROM Project.Activity A " +
                       $" LEFT JOIN Project.ActivityAttendee AA ON AA.ActivityId = A.ActivityId " +
                       $" WHERE A.ActivityId = {uxActivityId.Text} " +
-                      $" GROUP BY A.ActivityName, ActivityDate, A.Fee ";
+                      $" GROUP BY A.ActivityId, A.ActivityName, ActivityDate, A.Fee ";
                 }
                 else
                 {
-                    sql = $" SELECT A.ActivityName, CAST(A.ActivityDate AS DATE) AS ActivityDate, A.Fee, COUNT(DISTINCT AA.MemberId) AS Registered " +
+                    sql = $" SELECT A.ActivityName, A.ActivityId, CAST(A.ActivityDate AS DATE) AS ActivityDate, A.Fee, COUNT(DISTINCT AA.MemberId) AS Registered " +
                       $" FROM Project.Activity A " +
                       $" LEFT JOIN Project.ActivityAttendee AA ON AA.ActivityId = A.ActivityId " +
                       $" WHERE A.ActivityName = N'{uxActivityName.Text}' " +
-                      $" GROUP BY A.ActivityName, ActivityDate, A.Fee ";
+                      $" GROUP BY A.ActivityId, A.ActivityName, ActivityDate, A.Fee ";
                 }
                 
                 command = new SqlCommand(sql, cnn);
@@ -274,9 +275,10 @@ namespace Museum_Project
                 while (dataReader.Read())
                 {
                     output = output + $"NAME:{dataReader.GetValue(0)}\r\n" +
-                                      $"DATE:{dataReader.GetValue(1)}\r\n" +
-                                      $"FEE:{dataReader.GetValue(2)}\r\n" +
-                                      $"REGISTRATION COUNT:{dataReader.GetValue(3)}\r\n\r\n";
+                                      $"ACTIVITY ID:{dataReader.GetValue(1)}\r\n" +
+                                      $"DATE:{dataReader.GetValue(2)}\r\n" +
+                                      $"FEE:{dataReader.GetValue(3)}\r\n" +
+                                      $"REGISTRATION COUNT:{dataReader.GetValue(4)}\r\n\r\n";
                 }
                 dataReader.Close();
             }
@@ -300,6 +302,7 @@ namespace Museum_Project
         {
             try
             {
+                if(uxMemberID.Text.Length == 0 || uxActivityId.Text.Length == 0) { throw new Exception("Both ActivityId and MemberId needed to register for an activity!"); }
                 sql = $"DECLARE @ActivityId INT = ( SELECT A.ActivityId FROM Project.Activity A WHERE A.ActivityName = N'{uxActivityName.Text}' );"+
                       $"INSERT INTO Project.ActivityAttendee(ActivityId, MemberId)" +
                       $"VALUES({uxActivityId.Text}, {Convert.ToInt32(uxMemberID.Text)})";
@@ -308,12 +311,13 @@ namespace Museum_Project
                 dataAdapter.InsertCommand = command;
                 dataAdapter.InsertCommand.ExecuteNonQuery();
                 uxResults.Text = "Registration complete!";
+                command.Dispose();
             }
             catch (Exception ex)
             {
                 uxResults.Text = ex.Message;
             }
-            command.Dispose();
+            
         }
 
         /// <summary>
@@ -500,7 +504,7 @@ namespace Museum_Project
 
                         dataAdapter.InsertCommand = command;
                         dataAdapter.InsertCommand.ExecuteNonQuery();
-                        uxResults.Text = "Welcome!!!";
+                        output = "Welcome!!!";
                     }
                     catch (Exception ex)
                     {
@@ -534,6 +538,11 @@ namespace Museum_Project
         }
 
         private void uxNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usernameTxt_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -59,9 +59,8 @@ namespace Museum_Project
                     if (uxNewMembership.Checked == false)
                     {
                         if(uxMembershipId.Text.Length == 0) { throw new Exception("MembershipId needed to add a member without a new membership!"); }
-                        var newM = new Member(0, uxFirstName.Text + " " + uxLastName.Text, uxEmailAddress.Text, uxDoBPick.Value.Day, uxDoBPick.Value.Month, uxDoBPick.Value.Year, Convert.ToInt32(uxZipCode.Text));
                         sql = $" INSERT INTO Project.Member(MembershipId,[Name],Email,DateOfBirth,IsPrimary,ZipCode) " +
-                              $" VALUES({uxMembershipId.Text}, N'{uxFirstName.Text} {uxLastName.Text}',N'{uxEmailAddress.Text}',N'{newM.DoB}',0 ,N'{uxZipCode.Text}')";
+                              $" VALUES({uxMembershipId.Text}, N'{uxFirstName.Text} {uxLastName.Text}',N'{uxEmailAddress.Text}',N'{uxDoBPick.Value.Year}-{uxDoBPick.Value.Month}-{uxDoBPick.Value.Day}',0 ,N'{uxZipCode.Text}')";
                         command = new SqlCommand(sql, cnn);
 
                         dataAdapter.InsertCommand = command;
@@ -70,24 +69,24 @@ namespace Museum_Project
                     }
                     else
                     {
-                        var newM = new Member(0, uxFirstName.Text + " " + uxLastName.Text, uxEmailAddress.Text, uxDoBPick.Value.Day, uxDoBPick.Value.Month, uxDoBPick.Value.Year, Convert.ToInt32(uxZipCode.Text));
                         sql = $" INSERT INTO Project.Membership(Expiration) " +
                               $" VALUES(N'{DateTime.Today.Year + 1}-{DateTime.Today.Month}-{DateTime.Today.Day}')" +
                               $" DECLARE @MembershipId INT = SCOPE_IDENTITY();" +
                               $" INSERT INTO Project.Member(MembershipId,[Name],Email,DateOfBirth,IsPrimary,ZipCode)" +
-                              $" VALUES( @MembershipId, N'{uxFirstName.Text} {uxLastName.Text}', N'{uxEmailAddress.Text}', N'{newM.DoB}',1 ,N'{uxZipCode.Text}')";
+                              $" VALUES( @MembershipId, N'{uxFirstName.Text} {uxLastName.Text}', N'{uxEmailAddress.Text}', N'{uxDoBPick.Value.Year}-{uxDoBPick.Value.Month}-{uxDoBPick.Value.Day}',1 ,N'{uxZipCode.Text}')";
                         command = new SqlCommand(sql, cnn);
 
                         dataAdapter.InsertCommand = command;
                         dataAdapter.InsertCommand.ExecuteNonQuery();
                         output = "Member added!\r\n";
                     }
-                }
+                    command.Dispose();
+            }
                 catch (Exception ex)
                 {
                     output = ex.Message;
                 }
-                command.Dispose();
+               
                 uxResults.Text = output;
                 showMemberInfo();
                 output = "";
@@ -153,10 +152,10 @@ namespace Museum_Project
                     sql = $" SELECT M.MemberId, M.MembershipId, M.Name, M.Email  " +
                       $" FROM Project.Member M WHERE M.Email = N'{uxEmailAddress.Text}'";
                 }
-                else if(uxFirstName.Text != "")
+                else if(uxFirstName.Text != "" || uxLastName.Text != "")
                 {
                     sql = $" SELECT M.MemberId, M.MembershipId, M.Name, M.Email  " +
-                      $" FROM Project.Member M WHERE M.Name = N'{uxFirstName.Text} {uxLastName.Text}'";
+                      $" FROM Project.Member M WHERE M.Name LIKE N'%{uxFirstName.Text} {uxLastName.Text}%'";
                 }
                 else
                 {

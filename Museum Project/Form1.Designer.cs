@@ -183,8 +183,9 @@
             // 
             this.uxZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxZipCode.Location = new System.Drawing.Point(129, 196);
+            this.uxZipCode.MaxLength = 5;
             this.uxZipCode.Name = "uxZipCode";
-            this.uxZipCode.Size = new System.Drawing.Size(278, 26);
+            this.uxZipCode.Size = new System.Drawing.Size(120, 26);
             this.uxZipCode.TabIndex = 7;
             // 
             // uxResults

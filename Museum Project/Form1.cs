@@ -336,7 +336,7 @@ namespace Museum_Project
         private void onReportClick(object sender, EventArgs e)
         {
             var reportSelect = new ReportSelector();
-            reportSelect.Show();
+            reportSelect.ShowDialog();
 
             if(sql != "")
             {

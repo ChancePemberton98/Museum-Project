@@ -31,7 +31,7 @@
             this.uxReportSelectComboBox = new System.Windows.Forms.ComboBox();
             this.uxReportDescriptionBox = new System.Windows.Forms.TextBox();
             this.uxRunReportBox = new System.Windows.Forms.Button();
-            this.uxCancelBox = new System.Windows.Forms.Button();
+            this.uxCancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxReportSelectComboBox
@@ -60,22 +60,22 @@
             this.uxRunReportBox.Text = "Run";
             this.uxRunReportBox.UseVisualStyleBackColor = true;
             // 
-            // uxCancelBox
+            // uxCancelBtn
             // 
-            this.uxCancelBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxCancelBox.Location = new System.Drawing.Point(165, 207);
-            this.uxCancelBox.Name = "uxCancelBox";
-            this.uxCancelBox.Size = new System.Drawing.Size(151, 32);
-            this.uxCancelBox.TabIndex = 4;
-            this.uxCancelBox.Text = "Cancel";
-            this.uxCancelBox.UseVisualStyleBackColor = true;
+            this.uxCancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxCancelBtn.Location = new System.Drawing.Point(165, 207);
+            this.uxCancelBtn.Name = "uxCancelBtn";
+            this.uxCancelBtn.Size = new System.Drawing.Size(151, 32);
+            this.uxCancelBtn.TabIndex = 4;
+            this.uxCancelBtn.Text = "Cancel";
+            this.uxCancelBtn.UseVisualStyleBackColor = true;
             // 
             // ReportSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 251);
-            this.Controls.Add(this.uxCancelBox);
+            this.Controls.Add(this.uxCancelBtn);
             this.Controls.Add(this.uxRunReportBox);
             this.Controls.Add(this.uxReportDescriptionBox);
             this.Controls.Add(this.uxReportSelectComboBox);
@@ -91,6 +91,6 @@
         private System.Windows.Forms.ComboBox uxReportSelectComboBox;
         private System.Windows.Forms.TextBox uxReportDescriptionBox;
         private System.Windows.Forms.Button uxRunReportBox;
-        private System.Windows.Forms.Button uxCancelBox;
+        private System.Windows.Forms.Button uxCancelBtn;
     }
 }

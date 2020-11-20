@@ -15,14 +15,15 @@ namespace Museum_Project
     {
         public ReportSelector()
         {
-            uxCancelBox.Click += onCancelButtonClick;
             InitializeComponent();
+            uxCancelBtn.Click += onCancelButtonClick;
+
         }
 
         private void onCancelButtonClick(object sender, EventArgs e)
         {
-            Museum_Project.MuseumApp.sql = "";
-            this.Close();
+            MuseumApp.sql = "";
+            Close();
         }
     }
 }

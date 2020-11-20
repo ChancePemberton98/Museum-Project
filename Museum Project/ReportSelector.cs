@@ -33,7 +33,7 @@ namespace Museum_Project
         /// <param name="e"></param>
         private void onRunClick(object sender, EventArgs e)
         {
-            MuseumApp.sql = $"EXECUTE {uxReportSelectComboBox.SelectedItem.ToString()}";
+            MuseumApp.sql = $"EXEC {uxReportSelectComboBox.SelectedItem.ToString()}";
             Close();
         }
 

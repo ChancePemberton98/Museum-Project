@@ -30,7 +30,7 @@
         {
             this.uxReportSelectComboBox = new System.Windows.Forms.ComboBox();
             this.uxReportDescriptionBox = new System.Windows.Forms.TextBox();
-            this.uxRunReportBox = new System.Windows.Forms.Button();
+            this.uxRunReportBtn = new System.Windows.Forms.Button();
             this.uxCancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,15 +50,15 @@
             this.uxReportDescriptionBox.Size = new System.Drawing.Size(304, 160);
             this.uxReportDescriptionBox.TabIndex = 2;
             // 
-            // uxRunReportBox
+            // uxRunReportBtn
             // 
-            this.uxRunReportBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRunReportBox.Location = new System.Drawing.Point(13, 207);
-            this.uxRunReportBox.Name = "uxRunReportBox";
-            this.uxRunReportBox.Size = new System.Drawing.Size(146, 32);
-            this.uxRunReportBox.TabIndex = 3;
-            this.uxRunReportBox.Text = "Run";
-            this.uxRunReportBox.UseVisualStyleBackColor = true;
+            this.uxRunReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxRunReportBtn.Location = new System.Drawing.Point(13, 207);
+            this.uxRunReportBtn.Name = "uxRunReportBtn";
+            this.uxRunReportBtn.Size = new System.Drawing.Size(146, 32);
+            this.uxRunReportBtn.TabIndex = 3;
+            this.uxRunReportBtn.Text = "Run";
+            this.uxRunReportBtn.UseVisualStyleBackColor = true;
             // 
             // uxCancelBtn
             // 
@@ -76,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 251);
             this.Controls.Add(this.uxCancelBtn);
-            this.Controls.Add(this.uxRunReportBox);
+            this.Controls.Add(this.uxRunReportBtn);
             this.Controls.Add(this.uxReportDescriptionBox);
             this.Controls.Add(this.uxReportSelectComboBox);
             this.Name = "ReportSelector";
@@ -90,7 +90,7 @@
 
         private System.Windows.Forms.ComboBox uxReportSelectComboBox;
         private System.Windows.Forms.TextBox uxReportDescriptionBox;
-        private System.Windows.Forms.Button uxRunReportBox;
+        private System.Windows.Forms.Button uxRunReportBtn;
         private System.Windows.Forms.Button uxCancelBtn;
     }
 }

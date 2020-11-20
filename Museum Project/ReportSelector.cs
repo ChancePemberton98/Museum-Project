@@ -13,11 +13,22 @@ namespace Museum_Project
 {
     public partial class ReportSelector : Form
     {
+        private List<string> reports = new List<string>();
+
         public ReportSelector()
         {
             InitializeComponent();
             uxCancelBtn.Click += onCancelButtonClick;
+            uxRunReportBtn.Click += onRunClick;
+            uxReportSelectComboBox.DataSource = reports;
 
+        }
+
+
+        private void onRunClick(object sender, EventArgs e)
+        {
+            MuseumApp.sql = $"EXECUTE {uxReportSelectComboBox.SelectedItem.ToString()}";
+            Close();
         }
 
         private void onCancelButtonClick(object sender, EventArgs e)

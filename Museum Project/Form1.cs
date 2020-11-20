@@ -458,6 +458,12 @@ namespace Museum_Project
             output = "";
         }
 
+        /// <summary>
+        /// Opens a dialog to get MemberId and/or guest zip codes for Inserting new visits or
+        /// looking up member visit history.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onVisitClick(object sender, EventArgs e)
         {
             var visitHandler = new VisitHandler();
@@ -465,22 +471,42 @@ namespace Museum_Project
 
             if (sql != "")
             {
-                try
+                if (sql.Length < 50)
                 {
-                    command = new SqlCommand(sql, cnn);
-                    dataReader = command.ExecuteReader();
 
-                    DataTable dispalyTable = new DataTable();
-                    dispalyTable.Load(dataReader);
-                    DataGridView gridView = new DataGridView(dispalyTable);
-                    gridView.Text = sql;
-                    gridView.Show();
+                    try
+                    {
+                        command = new SqlCommand(sql, cnn);
+                        dataReader = command.ExecuteReader();
 
-                    dataReader.Close();
+                        DataTable dispalyTable = new DataTable();
+                        dispalyTable.Load(dataReader);
+                        DataGridView gridView = new DataGridView(dispalyTable);
+                        gridView.Text = sql;
+                        gridView.Show();
+
+                        dataReader.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        output = ex.Message;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    output = ex.Message;
+                    try
+                    {
+                        command = new SqlCommand(sql, cnn);
+
+                        dataAdapter.InsertCommand = command;
+                        dataAdapter.InsertCommand.ExecuteNonQuery();
+                        uxResults.Text = "Welcome!!!";
+                    }
+                    catch (Exception ex)
+                    {
+                        output = ex.Message;
+                    }
+                    command.Dispose();
                 }
                 uxResults.Text = output;
                 output = "";

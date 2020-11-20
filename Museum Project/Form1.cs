@@ -18,7 +18,8 @@ namespace Museum_Project
         SqlCommand command;
         SqlDataReader dataReader;
         SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        String sql, output = "";
+        static string sql; 
+        string output = "";
 
         public MuseumApp()
         {
@@ -302,54 +303,6 @@ namespace Museum_Project
             }
             uxResults.Text = output;
             output = "";
-        }
-
-        private string getMembershipId(string email)
-        {
-            string gotId = "";
-            try
-            {
-                sql = $" SELECT M.MembershipId" +
-                      $" FROM Project.Member M WHERE M.Email = N'{email}'";
-                command = new SqlCommand(sql, cnn);
-                dataReader = command.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    output = dataReader.GetValue(0).ToString();
-                }
-                dataReader.Close();
-            }
-            catch (Exception ex)
-            {
-                output = ex.Message;
-            }
-
-            return gotId;
-        }
-
-        private string getMemberId(string email)
-        {
-            string gotId = "";
-            try
-            {
-                sql = $" SELECT M.MemberId" +
-                      $" FROM Project.Member M WHERE M.Email = N'{email}'";
-                command = new SqlCommand(sql, cnn);
-                dataReader = command.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    output = dataReader.GetValue(0).ToString();
-                }
-                dataReader.Close();
-            }
-            catch (Exception ex)
-            {
-                output = ex.Message;
-            }
-
-            return gotId;
         }
 
         private void showMemberInfo()

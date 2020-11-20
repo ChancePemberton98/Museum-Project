@@ -408,14 +408,12 @@ namespace Museum_Project
                     command = new SqlCommand(sql, cnn);
                     dataReader = command.ExecuteReader();
 
-                    while (dataReader.Read())
-                    {
-                        //THIS OUTPUT NEEDS TO CHANGE
-                        output = output + $"MEMBER ID:{dataReader.GetValue(0)}\r\n" +
-                                          $"MEMBERSHIP ID:{dataReader.GetValue(1)}\r\n" +
-                                          $"NAME:{dataReader.GetValue(2)}\r\n" +
-                                          $"EMAIL:{dataReader.GetValue(3)}\r\n\r\n";
-                    }
+                    DataTable dispalyTable = new DataTable();
+                    dispalyTable.Load(dataReader);
+                    DataGridView gridView = new DataGridView(dispalyTable);
+                    gridView.Text = sql;
+                    gridView.Show();
+
                     dataReader.Close();
                 }
                 catch (Exception ex)

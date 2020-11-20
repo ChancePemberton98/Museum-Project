@@ -29,3 +29,4 @@ C:\Users\goodg\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Proje
 C:\Users\goodg\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Project.exe
 C:\Users\goodg\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum Project.pdb
 C:\Users\goodg\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum_Project.ReportSelector.resources
+C:\Users\goodg\Source\Repos\Museum-Project\Museum Project\obj\Debug\Museum_Project.DataGridView.resources
